@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:background="@color/pale_yellow">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/olive_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="1dp">
+            <TextView
+                android:id="@+id/homeMenuText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home Menu"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="15dp"
+                android:textSize = "24dp"
+                android:padding = "2dp"
+                android:textColor = "?attr/colorOnPrimary"
+                android:textStyle = "bold"/>
+            <com.google.android.material.button.MaterialButton
+                android:backgroundTint="@color/olive_green"
+                android:layout_width="40dp"
+                android:id="@+id/addGroupButton"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/addicon"
+                app:iconGravity="end"
+                android:drawableTint="?attr/colorOnPrimary"
+                android:padding="4dp"
+                android:layout_gravity="end"/>
+            <com.google.android.material.button.MaterialButton
+                android:backgroundTint="@color/olive_green"
+                android:id="@+id/profileButton"
+                android:layout_width="40dp"
+                app:iconGravity="start"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/profile_icon"
+                android:layout_gravity="end"
+                android:padding="4dp"
+                android:drawableTint="?attr/colorOnPrimary"/>
+            <com.google.android.material.button.MaterialButton
+                android:backgroundTint="@color/olive_green"
+                android:id="@+id/aboutButton"
+                android:layout_width="40dp"
+                app:iconGravity="start"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/about_icon"
+                android:layout_gravity="end"
+                android:padding="4dp"
+                android:drawableTint="?attr/colorOnPrimary"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/addedGroupsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:layout_margin="15dp"
+            android:text="Added Groups- "
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addedGroupsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addedGroupsText"
+            android:scrollbars="vertical"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            android:background="@color/olive_light_green"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

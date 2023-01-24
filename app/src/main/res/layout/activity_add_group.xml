@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddGroupActivity"
+    android:background="@color/pale_yellow">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/olive_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="1dp">
+            <TextView
+                android:id="@+id/addGroupText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Group"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="15dp"
+                android:textSize = "24dp"
+                android:padding = "2dp"
+                android:textColor = "?attr/colorOnPrimary"
+                android:textStyle = "bold"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="40dp"
+                android:id="@+id/backButton"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/back_icon"
+                app:iconGravity="end"
+                android:backgroundTint="@color/olive_green"
+                android:padding="4dp"
+                android:layout_gravity="end"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/memberDetailCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            app:cardBackgroundColor="@color/olive_light_green">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/groupNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:hint="Group Name"
+                    android:textSize="20dp"
+                    android:textColorHint="@color/black"
+                    android:textColor="?attr/colorOnSecondary"
+                    android:backgroundTint="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/addFriendSection"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/groupNameEditText"
+                    android:text="Add Details of your friend-"
+                    android:textColor="?attr/colorOnSecondary"
+                    android:textSize="18dp"
+                    android:layout_marginVertical="14dp"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp"/>
+                <EditText
+                    android:id="@+id/memberNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/addFriendSection"
+                    android:hint="Name"
+                    android:textColorHint="@color/black"
+                    android:textSize="20dp"
+                    android:backgroundTint="@color/black"/>
+                <EditText
+                    android:id="@+id/memberEmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/memberNameEditText"
+                    android:hint="Email"
+                    android:textSize="20dp"
+
+                    android:backgroundTint="@color/black"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addGroupMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/memberEmailEditText"
+                    android:backgroundTint="@color/olive_dark_green"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="8dp"
+                    android:text="Add To Group"
+                    android:textColor="?attr/colorOnPrimary"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/addedGroupMembersText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/memberDetailCard"
+            android:layout_margin="15dp"
+            android:text="Added Group Members- "
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addedGroupMembersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addedGroupMembersText"
+            android:scrollbars="vertical"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            android:background="@color/olive_light_green"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createGroupButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addedGroupMembersRecyclerView"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:backgroundTint="@color/olive_dark_green"
+            android:text="Create Group"
+            android:textStyle="bold"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

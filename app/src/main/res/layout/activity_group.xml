@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddGroupActivity"
+    android:background="@color/pale_yellow">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pale_yellow">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/olive_green"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                tools:layout_editor_absoluteX="1dp">
+                <TextView
+                    android:id="@+id/groupNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Group Name"
+                    tools:layout_editor_absoluteX="44dp"
+                    tools:layout_editor_absoluteY="15dp"
+                    android:textSize = "24dp"
+                    android:padding = "2dp"
+                    android:textColor = "?attr/colorOnPrimary"
+                    android:textStyle = "bold"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="40dp"
+                    android:id="@+id/backButton"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/back_icon"
+                    android:backgroundTint="@color/olive_green"
+                    app:iconGravity="end"
+                    android:drawableTint="?attr/colorOnPrimary"
+                    android:padding="4dp"
+                    android:layout_gravity="end"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:icon="@drawable/history_icon"
+                    android:backgroundTint="@color/olive_green"
+                    android:id="@+id/transactionHistoryButton"
+                    android:padding="4dp"
+                    android:drawableTint="?attr/colorOnPrimary"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:icon="@drawable/send_email"
+                    android:backgroundTint="@color/olive_green"
+                    android:id="@+id/sendMailBtn"
+                    android:padding="4dp"
+                    android:drawableTint="?attr/colorOnPrimary"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:icon="@drawable/delete_icon"
+                    android:id="@+id/deleteButton"
+                    android:backgroundTint="@color/olive_green"
+                    android:padding="4dp"
+                    android:drawableTint="?attr/colorOnPrimary"/>
+            </androidx.appcompat.widget.Toolbar>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/MinimumDebtCard"
+                android:backgroundTint="@color/pale_yellow">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/minimizedDebt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="15dp"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/memberNameCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/MinimumDebtCard"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="15dp"
+                app:cardBackgroundColor="@color/olive_light_green">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/memberNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Member Names"
+                        android:gravity="center"
+                        android:textSize="24dp"
+                        android:textColor="@color/design_default_color_on_secondary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/whoPaysCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/memberNameCard"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="15dp"
+                app:cardBackgroundColor="@color/olive_light_green">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/whoPaysText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Who Paid?"
+                        android:gravity="center"
+                        android:textSize="14dp"
+                        android:textColor="@color/design_default_color_on_secondary" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        app:layout_constraintTop_toBottomOf="@id/whoPaysText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PayingMembersChipgroup"
+                        android:layout_margin="10dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/forWhoCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/whoPaysCard"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="15dp"
+                app:cardBackgroundColor="@color/olive_light_green">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/forWhoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="For Who?"
+                        android:gravity="center"
+                        android:textSize="14dp"
+                        android:textColor="@color/design_default_color_on_secondary" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        app:layout_constraintTop_toBottomOf="@id/forWhoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PaidMembersChipgroup"
+                        android:layout_margin="10dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/doneAddingButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Done Adding"
+                android:backgroundTint="@color/olive_dark_green"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintTop_toBottomOf="@id/forWhoCard" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fillTransactionDetailsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/doneAddingButton"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/olive_light_green">
+
+
+                    <EditText
+                        android:id="@+id/transactionAmountEditText"
+                        android:textAlignment="center"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="4dp"
+                        android:hint="Expense Value"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:inputType="numberDecimal"/>
+                    <EditText
+                        android:id="@+id/reasonEditText"
+                        android:textAlignment="center"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="4dp"
+                        android:hint="Reason"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/transactionAmountEditText" />
+                    <Button
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasonEditText"
+                        android:id="@+id/selectDateButton"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="Select Date"
+                        android:backgroundTint="@color/olive_dark_green"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginHorizontal="100dp"
+                        android:gravity="center"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/ByRatioOrAmountSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        app:thumbTint="@color/olive_dark_green"
+                        app:trackTint="@color/olive_green"
+                        android:gravity="center"
+                        android:text="By Ratio?"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/selectDateButton" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/transactionDetailsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/ByRatioOrAmountSwitch"
+                        android:orientation="horizontal"
+                        android:scrollbars="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    <Button
+                        android:id="@+id/addTransactionButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:text="Perform Transaction"
+                        android:backgroundTint="@color/olive_dark_green"
+                        android:textColor="?attr/colorOnPrimary"
+                        app:layout_constraintTop_toBottomOf="@id/transactionDetailsRecyclerView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

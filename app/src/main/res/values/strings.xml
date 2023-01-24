@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Expense Share</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="Name">NAME: %1$s</string>
+    <string name="Email">EMAIL: %1$s</string>
+    <string name="Welcome">Welcome, %1$s</string>
+</resources>
